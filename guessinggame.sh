@@ -28,7 +28,7 @@ function checkMessage {
     printMessageAndResetGame
 }
 
-# Function that prints whatever the message is.
+# Function that prints whatever the message is. Restarts game, if guess wrong
 
 function printMessageAndResetGame {
     echo $message
@@ -36,8 +36,6 @@ function printMessageAndResetGame {
     [[ $count -lt $response ]] && getInput
 }
 
-# Run function user input 
-# Run function for how many files are in current folder
-# Run function for message based on count
+# Run function user input.
 
 getInput
