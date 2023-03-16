@@ -29,7 +29,7 @@ function countFiles {
 # GRADE POINT 3: HERE ARE IF STATEMENTS
 
 function checkMessage {
-    [[ $count -gt $response ]] && message="There are more files than you guessed, try again "
+    [[ $count -gt $response ]] && message="There are more files than you guessed, try again"
     [[ $count -lt $response ]] && message="There are less files than you guessed, try again"
     [[ $count -eq $response ]] && message="You guessed right! Good job"
     printMessageAndResetGame
