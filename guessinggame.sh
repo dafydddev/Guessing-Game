@@ -1,4 +1,5 @@
 # Function that get input from user and start script. When done, calls count function.
+# GRADE POINT 1: HERE IS A FUNCTION
 
 function getInput {
     echo "Guess how many files are in the current directory then press Enter:"
@@ -7,7 +8,12 @@ function getInput {
     countFiles
 }
 
+# Run function user input. This intially starts the game. 
+
+getInput
+
 # Function that loops through folder and counts 1 for each file. When done, calls check msg function.
+# GRADE POINT 2: HERE IS A LOOP
 
 function countFiles {
     count=0
@@ -20,6 +26,7 @@ function countFiles {
 }
 
 # Function that checks count and sets message accordingly. When done, prints message.
+# GRADE POINT 3: HERE ARE IF STATEMENTS
 
 function checkMessage {
     [[ $count -gt $response ]] && message="There are more files than you guessed, try again "
@@ -28,14 +35,11 @@ function checkMessage {
     printMessageAndResetGame
 }
 
-# Function that prints whatever the message is. Restarts game, if guess wrong
+# Function that echos whatever the message is. 
+# Restarts game, if guess was wrong. Otherwise, program finishes.
 
 function printMessageAndResetGame {
     echo $message
     [[ $count -gt $response ]] && getInput
     [[ $count -lt $response ]] && getInput
 }
-
-# Run function user input.
-
-getInput

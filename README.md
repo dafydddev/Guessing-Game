@@ -1,3 +1,3 @@
 ## Guessing Game
 Date: 15th March 2013
-There are 41 lines in guessinggame.sh
+There are 45 lines in guessinggame.sh
