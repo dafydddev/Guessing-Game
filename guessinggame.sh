@@ -8,7 +8,8 @@ function getInput {
     countFiles
 }
 
-# Function that loops through folder and counts 1 for each file. When done, calls check msg function.
+# Function that loops through folder and counts 1 for each file. 
+# When done, calls check msg function.
 # GRADE POINT 2: HERE IS A LOOP
 
 function countFiles {
