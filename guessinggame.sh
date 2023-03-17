@@ -8,10 +8,6 @@ function getInput {
     countFiles
 }
 
-# Run function user input. This intially starts the game. 
-
-getInput
-
 # Function that loops through folder and counts 1 for each file. When done, calls check msg function.
 # GRADE POINT 2: HERE IS A LOOP
 
@@ -22,24 +18,27 @@ function countFiles {
         do
         let count=$count+1
     done
-    checkMessage
+    gameResult
 }
 
-# Function that checks count and sets message accordingly. When done, prints message.
+# Function that checks count and sets message accordingly. 
+# When done, prints message. And resets get if answer was wrong.
 # GRADE POINT 3: HERE ARE IF STATEMENTS
 
-function checkMessage {
-    [[ $count -gt $response ]] && message="There are more files than you guessed, try again"
-    [[ $count -lt $response ]] && message="There are less files than you guessed, try again"
-    [[ $count -eq $response ]] && message="You guessed right! Good job"
-    printMessageAndResetGame
+function gameResult {
+    if [[ $count -gt $response ]]
+    then
+        echo "There are more files than you guessed, try again"
+        getInput
+    elif [[ $count -lt $response ]]
+    then
+        echo "There are less files than you guessed, try again"
+        getInput
+    else
+        echo "You guessed right! Good job"
+    fi
 }
 
-# Function that echos whatever the message is. 
-# Restarts game, if guess was wrong. Otherwise, program finishes.
+# Run function user input. This intially starts the game. 
 
-function printMessageAndResetGame {
-    echo $message
-    [[ $count -gt $response ]] && getInput
-    [[ $count -lt $response ]] && getInput
-}
+getInput
